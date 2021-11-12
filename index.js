@@ -61,3 +61,20 @@ function ordenaArray(array, conditionForSwich) {
 console.log(ordenaArray(numberSequence, (n1,n2) => n1 > n2 ));
 /// Descendent
 console.log(ordenaArray(numberSequence, (n1,n2) => n1 < n2 ));
+
+/**
+ * Ejercicio 3 - Crea una funcion que calcule la media aritmética de los datos en el array Sequence.
+ */
+
+ function media(array) {
+    if ( ! Array.isArray(array) ) {
+        printError("This function needs as array");
+        return null;
+    }
+    let suma = 0;
+    for (let i = 0 ; i < array.length ; i++) suma += array[i];
+    return suma/array.length
+}
+
+// Tests
+console.log(media(numberSequence))
