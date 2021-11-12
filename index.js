@@ -78,3 +78,28 @@ console.log(ordenaArray(numberSequence, (n1,n2) => n1 < n2 ));
 
 // Tests
 console.log(media(numberSequence))
+
+/**
+ * Ejercicio 4 - Cálculo de la letra del Documento Nacional de Identidad (DNI)
+ */
+
+function validaDNI(number, char){
+    if ( typeof(number) !== "number" || number < 0 || number > 99999999 ) {
+        printError("Provided a invalid number.");
+        return null
+    }
+    if ( typeof(char) !== "string" || char.length !== 1) {
+        printError("Provided a invalid letter.");
+        return null
+    }
+    const correspondence = char.toUpperCase() === letrasDNI[number%23];
+    if (recorrespondencesult) console.log("Todo correcto.")
+    else console.log("La letra proporcionada no corresponde con este número de DNI.")
+    return correspondence
+}
+
+// Tests
+//console.log(validaDNI(32668086, "JA"))
+//console.log(validaDNI(100000000, "J"))
+//console.log(validaDNI(32668085, "J"))
+console.log(validaDNI(32668086, "J"))
