@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "jest": "^27.3.1"
+  },
+  "name": "html-hello",
+  "description": "Se acompañan las soluciones propuestas para los ejercicios. Se crean, adicionalemnte, un par de funciones adicionales para imprimir errores y limpiar los elemento improcedentes del array.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanBaDo/js-exercices-model-4geeks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanBaDo/js-exercices-model-4geeks/issues"
+  },
+  "homepage": "https://github.com/DanBaDo/js-exercices-model-4geeks#readme"
+}
