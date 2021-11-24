@@ -9,7 +9,7 @@ const letrasDNI = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', '
 
 /**
  * Print msg as an error
- * @param {*} msg 
+ * @param {string} msg 
  */
 function printError(msg){
     console.error(msg);
@@ -17,8 +17,8 @@ function printError(msg){
 
 /**
  * Creates an new array with numbers in array provided as argument
- * @param {Array} array 
- * @returns number Array
+ * @param {array} array 
+ * @returns {number} Array
  */
 function removeNoNumbers(array) {
     if ( ! Array.isArray(array) ) {
