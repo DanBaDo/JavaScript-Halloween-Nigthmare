@@ -23,7 +23,7 @@ Refactorizo el algoritmo en diferentes fases para simplificar su acometida:
 * Llamada estructurada a las funciones anteriores para completar el algoritmo.
 
 Se emplea recursividad para las funciones de unión de arrays.
-Para la ordenación de los elementos se emplean los métodos split y push compuestos como parámetros y funciones de primer orden para optimizar el empleo de memoria mediante programación funcional, moviendo punteros en lugar de datos.
+Para la ordenación de los elementos se emplean los métodos split y push compuestos como parámetros y funciones de primer orden para optimizar el empleo de memoria mediante programación funcional, manteniendo constante la cantidad total de información de los arrays.
 
 Durante la escritura del código se emplea *test-driven development* para comprobar la consecución de los requisitos.
 
