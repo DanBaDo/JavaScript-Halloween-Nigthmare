@@ -86,6 +86,18 @@ console.log(ordenaArray(numberSequence, (n1,n2) => n1 > n2 ));
 console.log(ordenaArray(numberSequence, (n1,n2) => n1 < n2 ));
 
 /**
+ * Ejercicio 1, 2 - Merge short
+ */
+
+function splitArray(array = []) {
+    const newArray = []
+    for ( let {i,l} = {i:0, l:array.length} ; i < l ; i++ ) {
+        newArray.push([array.shift()])
+    }
+    return newArray
+}
+
+/**
  * Ejercicio 3 - Crea una funcion que calcule la media aritmética de los datos en el array Sequence.
  */
 
@@ -127,7 +139,7 @@ function validaDNI(number, char){
         return null
     }
     const correspondence = char.toUpperCase() === letrasDNI[number%23];
-    if (recorrespondencesult) console.log("Todo correcto.")
+    if (correspondence) console.log("Todo correcto.")
     else console.log("La letra proporcionada no corresponde con este número de DNI.")
     return correspondence
 }
@@ -137,3 +149,7 @@ function validaDNI(number, char){
 //console.log(validaDNI(100000000, "J"))
 //console.log(validaDNI(32668085, "J"))
 console.log(validaDNI(32668086, "J"))
+
+module.exports = {
+    splitArray,
+}
