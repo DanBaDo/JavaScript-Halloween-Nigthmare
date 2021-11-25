@@ -106,6 +106,17 @@ function mergeSortTwoArrays (arr1, arr2, compareFunction, newArray = []) {
     return newArray
 }
 
+function mergeSort(array, compareFunction) {
+    while (array.length > 1) {
+        array.splice(0,2,[...mergeSortTwoArrays(array[0],array[1],compareFunction)])
+    }
+    return array[0]
+}
+
+function splitMergeSort(array, compareFunction) {
+    return mergeSort(splitArray(array), compareFunction)
+}
+
 /**
  * Ejercicio 3 - Crea una funcion que calcule la media aritmética de los datos en el array Sequence.
  */
@@ -160,5 +171,5 @@ function validaDNI(number, char){
 console.log(validaDNI(32668086, "J"))
 
 module.exports = {
-    splitArray, mergeSortTwoArrays
+    splitArray, mergeSortTwoArrays, mergeSort, splitMergeSort
 }
