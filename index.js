@@ -86,10 +86,15 @@ console.log(ordenaArray(numberSequence, (n1,n2) => n1 > n2 ));
 console.log(ordenaArray(numberSequence, (n1,n2) => n1 < n2 ));
 
 /**
- * Ejercicio 1, 2 - Merge short
+ * Ejercicio 1, 2 - Merge sort
  */
 
-function splitArray(array = []) {
+/**
+ * Auxiliar function for splitMergeSort. Split array in length 1 arrays array.
+ * @param {array} array - array to being splited.
+ * @returns {array[]}
+ */
+function splitArray(array) {
     const newArray = []
     for ( let {i,l} = {i:0, l:array.length} ; i < l ; i++ ) {
         newArray.push([array.shift()])
@@ -97,6 +102,14 @@ function splitArray(array = []) {
     return newArray
 }
 
+/**
+ * Auxiliar function for splitMergeSort. Merge two arrays sorting elements basis provided lambda function.
+ * @param {array} arr1 - First array to be merged.
+ * @param {array} arr2 - Second array to be merged.
+ * @param {function} compareFunction - Function for comparing arr1 and arr2 elements.
+ * @param {array} newArray - Empty array where to merge arr1 and arr2.
+ * @returns {array}
+ */
 function mergeSortTwoArrays (arr1, arr2, compareFunction, newArray = []) {
     if (arr1.length === 0 || arr2.length === 0) newArray.push(...arr1, ...arr2)
     else {
@@ -106,6 +119,12 @@ function mergeSortTwoArrays (arr1, arr2, compareFunction, newArray = []) {
     return newArray
 }
 
+/**
+ * Auxiliar function for splitMergeSort. Uses mergeSortTwoArrays to sort all arrays in array parameter.
+ * @param {array} array - One element arrays array to be sorted and merged.
+ * @param {function} compareFunction - Lambda function for elements comparison.
+ * @returns {array}
+ */
 function mergeSort(array, compareFunction) {
     while (array.length > 1) {
         array.splice(0,2,[...mergeSortTwoArrays(array[0],array[1],compareFunction)])
@@ -113,6 +132,13 @@ function mergeSort(array, compareFunction) {
     return array[0]
 }
 
+/**
+ * Merge array elements using merge sort algorithm basis provided lambda function.
+ * Uses mergeSort and splitArray.
+ * @param {array} array - Array which elements will be merged.
+ * @param {function} compareFunction - Lambda function for elements comparison.
+ * @returns {array}
+ */
 function splitMergeSort(array, compareFunction) {
     return mergeSort(splitArray(array), compareFunction)
 }
