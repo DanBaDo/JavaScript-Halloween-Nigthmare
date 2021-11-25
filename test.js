@@ -23,3 +23,9 @@ test("splitMergeSort([7,2,5,9,3,10,4,6],(a,b)=>a<b) must to return [2,3,4,5,6,7,
     const result = splitMergeSort([7,2,5,9,3,10,4,6],(a,b)=>a<b);
     expect(result).toEqual(expected);
 })
+
+test("splitMergeSort([7,2,5,9,3,10,4,6],(a,b)=>a>b) must to return [10,9,7,6,5,4,3,2]", ()=>{
+    const expected = [10,9,7,6,5,4,3,2];
+    const result = splitMergeSort([7,2,5,9,3,10,4,6],(a,b)=>a>b);
+    expect(result).toEqual(expected);
+})
