@@ -97,6 +97,15 @@ function splitArray(array = []) {
     return newArray
 }
 
+function mergeSortTwoArrays (arr1, arr2, compareFunction, newArray = []) {
+    if (arr1.length === 0 || arr2.length === 0) newArray.push(...arr1, ...arr2)
+    else {
+        newArray.push(compareFunction(arr1[0], arr2[0]) ? arr1.shift() : arr2.shift())
+        mergeSortTwoArrays(arr1, arr2, compareFunction, newArray)
+    }
+    return newArray
+}
+
 /**
  * Ejercicio 3 - Crea una funcion que calcule la media aritmética de los datos en el array Sequence.
  */
@@ -151,5 +160,5 @@ function validaDNI(number, char){
 console.log(validaDNI(32668086, "J"))
 
 module.exports = {
-    splitArray,
+    splitArray, mergeSortTwoArrays
 }
